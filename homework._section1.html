@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home work</title>
+</head>
+<body>
+<table border="1">
+<thead>
+
+    <td>mã sinh viên</td>
+    <td>tên sinh viên</td>
+    <td>tuổi</td>
+    <td>địa chỉ</td>
+    <td>sdt</td>
+
+</thead>
+
+<tbody id="student-list">
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</tbody>
+
+
+
+</table>
+<tr>
+</tr>
+
+
+
+    
+    <script>
+
+// Bài tập:
+// Bài 1: Cho 1 mảng các chuỗi, sử dụng map để tạo ra mảng mới chứa các chuỗi viết hoa
+// input: ["hello", "hi", "heyy"]
+// ouput: ["HELLO", "HI", "HEYY"]
+let input = ['hello','hi','heys']
+        function toupperCase(arr) {
+        let output = [];
+        output = input.map(function (item) {
+            return item.toUpperCase()
+        })    
+                return output;
+        }
+        let output = toupperCase(input)
+        console.log(output);
+
+
+
+
+
+
+
+
+// Bài 2: Cho 1 mảng chứa các đối tượng sinh viên, sử dụng map để in các sinh viên ra bảng (table)
+// input:
+/* 
+[
+   {id: 1, name: "StudentA", age: 25, address: "HN", phone: "02458643"},
+   {id: 2, name: "StudentB", age: 20, address: "HCM", phone: "02321515"},
+   {id: 3, name: "StudentC", age: 22, address: "DN", phone: "09825314"},
+   {id: 4, name: "StudentD", age: 23, address: "HP", phone: "031515554"},
+   {id: 5, name: "StudentE", age: 19, address: "HN", phone: "0358786454"},
+]
+ */
+
+let tableElement = document.querySelector("#student-list")
+
+let input1 = [
+   {id: 1, name: "StudentA", age: 25, address: "HN", phone: "02458643"},
+   {id: 2, name: "StudentB", age: 20, address: "HCM", phone: "02321515"},
+   {id: 3, name: "StudentC", age: 22, address: "DN", phone: "09825314"},
+   {id: 4, name: "StudentD", age: 23, address: "HP", phone: "031515554"},
+   {id: 5, name: "StudentE", age: 19, address: "HN", phone: "0358786454"},
+]
+
+let output1 = input1.map(function (item) {
+    return `<tr>
+        <td>${item.id}</td>
+    <td>${item.name}</td>
+    <td>${item.age}</td>
+    <td>${item.address}</td>
+    <td>${item.phone}</td>
+</tr>
+`});
+
+
+tableElement.innerHTML= output1.join("");
+
+
+
+// Bài 3: Sử dụng filter lọc ra các số lẻ trong mảng
+// input: [50, 30, 45, 20, 89, 60]
+// output: [45, 89]
+
+let input2 = [50, 30, 45, 20, 89, 60];
+
+let output2 = input2.filter(function (item) {
+    return item %2 ==0;
+})
+
+console.log(output2);
+
+
+
+// Bài 4: Cho mảng chứa các đối tượng sản phẩm với trường price,
+// sử dụng filter lọc ra sản phẩm nhỏ hơn 50
+// input:
+
+
+let input3 =[
+   {id: 1, name: "Áo thun", quantity: 10, price: 20},
+   {id: 2, name: "Quần âu", quantity: 20, price: 60},
+   {id: 3, name: "Giầy",  quantity: 30, price: 30},
+   {id: 4, name: "Áo sơ mi", quantity: 40, price: 40},
+   {id: 5, name: "Quần bò", quantity: 50, price: 50},
+]
+
+let output3 = input3.filter( (item) => {
+    return item.price <= 50;
+})
+
+console.log(output3);
+
+
+// Bài 5: Cho mảng các chuỗi, sử dụng find để tìm chuỗi có độ dài lớn hơn 8 ký tự
+ let input5= ["Welcome To Rikkei Academy", "Going to homework", "To Sleep"]
+// output: To Sleep
+
+let output5 = input5.find ((item => item.length <=8))
+
+console.log(output5);
+
+// Bài 6: Cho mảng chứa các đối tượng sản phẩm với trường "quantity",
+// sử dụng find để tìm sản phẩm có số lượng tồn kho bằng 0
+// input:
+let input6 = 
+[
+   {id: 1, name: "Áo thun", quantity: 10, price: 20},
+   {id: 2, name: "Quần âu", quantity: 5, price: 60},
+   {id: 3, name: "Giầy", quantity: 0, price: 30},
+   {id: 4, name: "Áo sơ mi", quantity: 6, price: 40},
+   {id: 5, name: "Quần bò", quantity: 4, price: 50},
+]
+
+
+// output: {id: 3, name: "Giầy", age: quantity: 0, price: 30},
+
+let output6 = input6.find ((item => item.quantity == 0))
+
+console.log(output6);
+
+
+
+    </script>
+
+
+
+</body>
+</html>
